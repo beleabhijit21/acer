@@ -12,8 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag tuesday_today:$(date +%s)
+      run: docker build . --file Dockerfile --tag jaishriram:$(date +%s)
     - name: Log in to Docker Hub
-      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
     - name: Push Docker image to Docker Hub
-      run: docker push tuesday_today:$(date +%s)
+      run: docker push jaishriram:$(date +%s)
