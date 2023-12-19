@@ -1,0 +1,45 @@
+{% extends "layout.html"%}
+
+{% block title %}
+
+<title> SHOW ORDERS </title>
+
+{% endblock %}
+
+{% block content%}
+<table class='table table-light'>
+    <thead>
+        <tr>
+            <th> ORDER ID </th>
+            <th> PRODUCT </th>
+            <th> QUANTITY </th>
+            <th> PRICE </th>
+            <th> DELIVERY </th>
+            <th> ADDRESS </th>
+            <th> PHONE </th>
+            <th> E-mail id </th>
+            <th>Action</th>
+
+        </tr>
+        <tbody>
+            {% for obj in data %}
+            <tr>
+                <td>{{obj.oid}}</td>
+                <td>{{obj.product}}</td>
+                <td>{{obj.quantity}}</td>
+                <td>{{obj.price}}</td>
+                <td>{{obj.del_date}}</td>
+                <td>{{obj.address}}</td>
+                <td>{{obj.phone}}</td>
+                <td>{{obj.mail}}</td>
+                <td>
+                    <a href="{% url 'update_url' obj.oid %}"><button class='btn btn-success btn-sm mr-3'>UPDATE</button></a>
+                    <a href="{% url 'delete_url' obj.oid %}"><button class='btn btn-warning btn-sm'>DELETE</button></a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+{%endblock%}
