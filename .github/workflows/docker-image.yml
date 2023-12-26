@@ -27,12 +27,12 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python3 manage.py
+        python manage.py test  # Adjust this line based on your Django test command
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag beleabhijit21/sss:latest
     - name: Run Docker container
-      run: docker run -d -p 8000:8000 project1
+      run: docker run -d -p 8000:8000 beleabhijit21/sss:latest  # Fix the image name
     - name: Log in to Docker Hub
       run: |
         echo Logging in to Docker Hub
