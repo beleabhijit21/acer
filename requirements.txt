@@ -1,5 +1,4 @@
-pip install --upgrade setuptools pip
-pip install wheel Cython
+
 django-crispy-forms==2.1
 psycopg==3.1.15
 psycopg2-binary==2.9.9
