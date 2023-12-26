@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3
+FROM python:3.11.5
 
 # Set the working directory to /app/profit_guide
 WORKDIR /app/project1
