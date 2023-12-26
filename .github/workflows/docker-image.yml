@@ -28,10 +28,6 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py  # Adjust this line based on your Django test command
-    - name: Update Dependencies # Adition add kel start
-      run: |
-        python -m pip install --upgrade pip setuptools
-        python -m pip install -r requirements.txt # yethe end zhal!
 
     - uses: actions/checkout@v3
     - name: Build the Docker image
